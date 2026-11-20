@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzería | IA Pizzas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Dibujos de pizza reutilizables -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="p-base" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="190" fill="#d99a4e"/>
+            <circle cx="200" cy="200" r="172" fill="#c62828"/>
+            <circle cx="200" cy="200" r="160" fill="#f6c244"/>
+        </symbol>
+        <symbol id="p-pepperoni" viewBox="0 0 400 400">
+            <use href="#p-base" width="400" height="400"/>
+            <g fill="#b71c1c" stroke="#7f1010" stroke-width="3">
+                <circle cx="150" cy="130" r="28"/><circle cx="255" cy="120" r="28"/>
+                <circle cx="105" cy="215" r="28"/><circle cx="205" cy="200" r="28"/>
+                <circle cx="295" cy="215" r="28"/><circle cx="155" cy="290" r="28"/>
+                <circle cx="255" cy="295" r="28"/><circle cx="200" cy="105" r="22"/>
+            </g>
+            <g fill="#2e7d32">
+                <ellipse cx="125" cy="170" rx="18" ry="8" transform="rotate(-30 125 170)"/>
+                <ellipse cx="270" cy="165" rx="18" ry="8" transform="rotate(35 270 165)"/>
+                <ellipse cx="205" cy="260" rx="18" ry="8" transform="rotate(-10 205 260)"/>
+            </g>
+        </symbol>
+        <symbol id="p-hawaiana" viewBox="0 0 400 400">
+            <use href="#p-base" width="400" height="400"/>
+            <g fill="#f48fb1" stroke="#c2185b" stroke-width="3">
+                <rect x="120" y="110" width="46" height="30" rx="9" transform="rotate(-20 143 125)"/>
+                <rect x="240" y="105" width="46" height="30" rx="9" transform="rotate(25 263 120)"/>
+                <rect x="95" y="205" width="46" height="30" rx="9" transform="rotate(10 118 220)"/>
+                <rect x="260" y="215" width="46" height="30" rx="9" transform="rotate(-15 283 230)"/>
+                <rect x="140" y="280" width="46" height="30" rx="9" transform="rotate(30 163 295)"/>
+                <rect x="235" y="285" width="46" height="30" rx="9" transform="rotate(-25 258 300)"/>
+            </g>
+            <g fill="#ffe066" stroke="#e0a800" stroke-width="3">
+                <rect x="185" y="125" width="28" height="28" transform="rotate(15 199 139)"/>
+                <rect x="170" y="185" width="28" height="28" transform="rotate(-10 184 199)"/>
+                <rect x="225" y="190" width="28" height="28" transform="rotate(30 239 204)"/>
+                <rect x="195" y="255" width="28" height="28" transform="rotate(-20 209 269)"/>
+                <rect x="115" y="160" width="24" height="24" transform="rotate(20 127 172)"/>
+                <rect x="285" y="160" width="24" height="24" transform="rotate(-25 297 172)"/>
+            </g>
+        </symbol>
+    </svg>
+
+    <div class="barra">
+        <a class="marca" href="#">IA Pizzas</a>
+        <nav>
+            <a href="#menu">Menú</a>
+            <a class="boton" href="#carrito-panel">Carrito (<span id="contador">0</span>)</a>
+        </nav>
+    </div>
+
+    <header class="hero">
+        <div class="hero-texto">
+            <h1><span>IA</span><span>Pizzas</span></h1>
+            <p class="lema">Las mejores pizzas de Cuernavaca.</p>
+            <a class="boton" href="#menu">Ver el menú</a>
+        </div>
+
+       <div class="hero-imagen">
+    <img src="img/hero.jpg" alt="Pizza recién salida del horno">
+</div>
+    </header>
+
+    <main id="menu">
+        <section>
+            <h2>Nuestro menú</h2>
+
+            <div class="catalogo">
+                <article class="pizza">
+                    <div class="foto con-foto">
+                        <img src="img/pepperoni.png" alt="Pizza de pepperoni con orilla gruesa" width="474" height="266">
+                    </div>
+                    <div class="info">
+                        <h3>Pizza Pepperoni</h3>
+                        <p>Deliciosa pizza con pepperoni.</p>
+                        <p class="precio">$195 MXN</p>
+                        <button data-nombre="Pepperoni" data-precio="195">Agregar al carrito</button>
+                    </div>
+                </article>
+
+                <article class="pizza">
+                    <div class="foto con-foto">
+                    <img src="img/hawaiana.png" alt="Pizza hawaiana con jamón y piña" width="600" height="600">
+                        </div>
+                    <div class="info">
+                        <h3>Pizza Hawaiana</h3>
+                        <p>Pizza con jamón y piña.</p>
+                        <p class="precio">$198 MXN</p>
+                        <button data-nombre="Hawaiana" data-precio="198">Agregar al carrito</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside class="carrito" id="carrito-panel">
+            <h2 id="carrito-titulo">Mi carrito (0)</h2>
+            <ul id="carrito-lista"></ul>
+            <h3 id="carrito-total">Total: $0 MXN</h3>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
